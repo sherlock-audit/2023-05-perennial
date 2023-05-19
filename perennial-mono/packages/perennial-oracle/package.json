@@ -1,0 +1,58 @@
+{
+  "name": "@equilibria/perennial-oracle",
+  "version": "1.2.0",
+  "description": "Perennial oracle contracts",
+  "files": [
+    "contracts",
+    "artifacts/contracts",
+    "deployments/!(localhost)",
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "scripts": {
+    "build": "yarn compile && tsc -p tsconfig.build.json",
+    "compile": "hardhat compile",
+    "deploy": "OPTIMIZER_ENABLED=true hardhat deploy",
+    "verify": "hardhat etherscan-verify --sleep --solc-input",
+    "gasReport": "REPORT_GAS=true yarn test:integration",
+    "test": "hardhat test test/unit/**/*",
+    "test:integration": "FORK_ENABLED=true FORK_BLOCK_NUMBER=16495204 hardhat test test/integration/**/*",
+    "test:verification": "hardhat test test/verification/**/* --network mainnet",
+    "coverage": "hardhat coverage --testfiles 'test/unit/**/*'",
+    "coverage:integration": "FORK_ENABLED=true FORK_BLOCK_NUMBER=16495204 hardhat coverage --testfiles 'test/integration/**/*'",
+    "lint": "eslint --fix --ext '.ts,.js' ./ && solhint 'contracts/**/*.sol' --fix",
+    "format": "prettier -w .",
+    "clean": "rm -rf cache artifacts types/generated dist deployments/localhost",
+    "node:fork:goerli": "FORK_ENABLED=true FORK_NETWORK=goerli NODE_INTERVAL_MINING=500 hardhat node",
+    "deploy:fork:goerli": "FORK_ENABLED=true FORK_NETWORK=goerli hardhat deploy --network localhost",
+    "node:fork:arbitrumGoerli": "FORK_ENABLED=true FORK_NETWORK=arbitrumGoerli NODE_INTERVAL_MINING=500 hardhat node",
+    "deploy:fork:arbitrumGoerli": "FORK_ENABLED=true FORK_NETWORK=arbitrumGoerli hardhat deploy --network localhost",
+    "node:fork:optimismGoerli": "FORK_ENABLED=true FORK_NETWORK=optimismGoerli NODE_INTERVAL_MINING=500 hardhat node",
+    "deploy:fork:optimismGoerli": "FORK_ENABLED=true FORK_NETWORK=optimismGoerli hardhat deploy --network localhost",
+    "node:fork:baseGoerli": "FORK_ENABLED=true FORK_NETWORK=baseGoerli NODE_INTERVAL_MINING=500 hardhat node",
+    "deploy:fork:baseGoerli": "FORK_ENABLED=true FORK_NETWORK=baseGoerli hardhat deploy --network localhost",
+    "node:fork:mainnet": "FORK_ENABLED=true FORK_NETWORK=mainnet NODE_INTERVAL_MINING=500 hardhat node",
+    "deploy:fork:mainnet": "FORK_ENABLED=true FORK_NETWORK=mainnet hardhat deploy --network localhost",
+    "node:fork:arbitrum": "FORK_ENABLED=true FORK_NETWORK=arbitrum NODE_INTERVAL_MINING=500 hardhat node",
+    "deploy:fork:arbitrum": "FORK_ENABLED=true FORK_NETWORK=arbitrum hardhat deploy --network localhost",
+    "node:fork:optimism": "FORK_ENABLED=true FORK_NETWORK=optimism NODE_INTERVAL_MINING=500 hardhat node",
+    "deploy:fork:optimism": "FORK_ENABLED=true FORK_NETWORK=optimism hardhat deploy --network localhost",
+    "node:fork:base": "FORK_ENABLED=true FORK_NETWORK=base NODE_INTERVAL_MINING=500 hardhat node",
+    "deploy:fork:base": "FORK_ENABLED=true FORK_NETWORK=base hardhat deploy --network localhost",
+    "prepack": "yarn clean && yarn build && find artifacts/contracts -name '*.dbg.json' -type f -delete"
+  },
+  "author": "",
+  "license": "APACHE-2.0",
+  "dependencies": {
+    "@chainlink/contracts": "0.5.1",
+    "@equilibria/root": "0.2.0",
+    "@openzeppelin/contracts": "4.6.0",
+    "@ethersproject/bignumber": "^5.5.1"
+  },
+  "peerDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.1.0",
+    "hardhat": "^2.10.1",
+    "hardhat-deploy": "^0.11.12"
+  }
+}
