@@ -7,6 +7,68 @@
 
 # Q&A
 
+### Q: On what chains are the smart contracts going to be deployed?
+Perennial is deployed on Ethereum and Arbitrum mainnets
+___
+
+### Q: Which ERC20 tokens do you expect will interact with the smart contracts? 
+DSU and USDC
+___
+
+### Q: Which ERC721 tokens do you expect will interact with the smart contracts? 
+None
+___
+
+### Q: Which ERC777 tokens do you expect will interact with the smart contracts? 
+None
+___
+
+### Q: Are there any FEE-ON-TRANSFER tokens interacting with the smart contracts?
+
+None
+___
+
+### Q: Are there any REBASING tokens interacting with the smart contracts?
+
+None
+___
+
+### Q: Are the admins of the protocols your contracts integrate with (if any) TRUSTED or RESTRICTED?
+Protocol admin (Controller.owner): TRUSTED
+___
+
+### Q: Is the admin/owner of the protocol/contracts TRUSTED or RESTRICTED?
+TRUSTED
+___
+
+### Q: Are there any additional protocol roles? If yes, please explain in detail:
+Product Coordinator - these are owners of the products who can update product parameters
+___
+
+### Q: Is the code/contract expected to comply with any EIPs? Are there specific assumptions around adhering to those EIPs that Watsons should be aware of?
+None
+___
+
+### Q: Please list any known issues/acceptable risks that should not result in a valid finding.
+Malicious product coordinators can steal user funds _from their own product_. We are aware that malicious coordinators have a large amount of power with respect to funds deposited towards their products, however, if they can adversely affect **other products/collateral outside their product** we want to be are of this.
+___
+
+### Q: Please provide links to previous audits (if any).
+https://github.com/equilibria-xyz/perennial-mono/tree/master/packages/perennial/audits
+
+Comprehensive Veridise audit is being finalized now and will be added soon
+___
+
+### Q: Are there any off-chain mechanisms or off-chain procedures for the protocol (keeper bots, input validation expectations, etc)?
+Off-chain liquidators, OpenZeppelin defender tasks which periodically sync the vaults if they get far out of balance
+___
+
+### Q: In case of external protocol integrations, are the risks of external contracts pausing or executing an emergency withdrawal acceptable? If not, Watsons will submit issues related to these situations that can harm your protocol's functionality.
+We want to be aware of issues that might arise from Chainlink or DSU integrations
+___
+
+
+
 # Audit scope
 
 
