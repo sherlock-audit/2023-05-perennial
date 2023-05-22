@@ -58,8 +58,6 @@ ___
 https://drive.google.com/file/d/1WPPDUAAxgQhvY38jiKutRogqQoPtoBKF/view?usp=drivesdk
 
 https://github.com/equilibria-xyz/perennial-mono/tree/master/packages/perennial/audits
-
-Comprehensive Veridise audit is being finalized now and will be added soon
 ___
 
 ### Q: Are there any off-chain mechanisms or off-chain procedures for the protocol (keeper bots, input validation expectations, etc)?
