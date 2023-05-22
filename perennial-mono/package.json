@@ -8,7 +8,6 @@
     "packages/*"
   ],
   "scripts": {
-    "prepare": "husky install",
     "postinstall": "patch-package",
     "deploy:goerli": "./scripts/deploy_goerli.sh",
     "deploy:arbitrumGoerli": "./scripts/deploy_arbitrum_goerli.sh",
