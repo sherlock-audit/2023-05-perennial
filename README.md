@@ -34,11 +34,11 @@ None
 ___
 
 ### Q: Are the admins of the protocols your contracts integrate with (if any) TRUSTED or RESTRICTED?
-Protocol admin (Controller.owner): TRUSTED
+TRUSTED
 ___
 
 ### Q: Is the admin/owner of the protocol/contracts TRUSTED or RESTRICTED?
-TRUSTED
+Protocol admin (Controller.owner): TRUSTED
 ___
 
 ### Q: Are there any additional protocol roles? If yes, please explain in detail:
